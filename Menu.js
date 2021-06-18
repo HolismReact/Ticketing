@@ -10,7 +10,7 @@ const menuItems = [
             {
                 "title": "New Ticket",
                 "icon": "live_help",
-                "path": "/ticket",
+                "path": "/create-ticket",
             }
         ]
     }
