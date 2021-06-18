@@ -3,7 +3,7 @@ services:
     app:
         image: nefcanto/react-dev
         ports:
-            - "5000:5000"
+            - "5000:3000"
         working_dir: /app/Host
         volumes: 
             - /HolismReact/Ticketing:/app/Host/src/Ticketing
@@ -12,7 +12,7 @@ services:
             "
             git reset --hard
             && git pull
-            && mkdir /temp
+            && mkdir -p /temp
             && cd /temp
             && wget https://github.com/HolismReact/Panel/archive/refs/heads/main.zip
             && unzip main.zip -d /temp

@@ -1,4 +1,4 @@
-import TicketCreate from './Ticket/Create';
+import TicketCreate from './Ticketing/Ticket/Create';
 import TicketList from './Ticketing/Ticket/List';
 
 const routes = [
