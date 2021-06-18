@@ -4,6 +4,21 @@ services:
         image: nefcanto/react-dev
         ports:
             - "5000:5000"
+        working_dir: /app/Host
         volumes: 
-            - /HolismReact/Ticketing:/holism/react/Host/src/Ticketing
-        command: sh -c "echo 'hello from inside docker'"
+            - /HolismReact/Ticketing:/app/Host/src/Ticketing
+        command: >
+            sh -c
+            "
+            git reset --hard
+            && git pull
+            && mkdir /temp
+            && cd /temp
+            && wget https://github.com/HolismReact/Panel/archive/refs/heads/main.zip
+            && unzip main.zip -d /temp
+            && cd /app/Host
+            && cp -a /temp/Panel-main/. src/Panel/
+            && cp src/Ticketing/Menu.js src/Menu.js
+            && cp src/Ticketing/Routes.js src/Routes.js
+            && npm start
+            "
