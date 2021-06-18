@@ -1,0 +1,9 @@
+version: "3.9"
+services: 
+    app:
+        image: nefcanto/react-dev
+        ports:
+            - "5000:5000"
+        volumes: 
+            - /HolismReact/Ticketing:/holism/react/Host/src/Ticketing
+        command: sh -c "echo 'hello from inside docker'"
