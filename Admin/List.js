@@ -138,16 +138,13 @@ const Tickets = (props) => {
 
     return (
         <List
-            title="Hamid Tickets"
-            //subtitle="We are here for you. Create a new ticket to get support."
-            //breadcrumbItems={breadcrumbItems}
+            title="Tickets"
             entity="ticket"
             filters={filters}
             sorts={sorts}
             listActions={listActions}
             headers={headers}
             row={row}
-            //card={card}
             create={CreateTicket}
             itemActions={itemActions}
         />
