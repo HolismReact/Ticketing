@@ -89,14 +89,20 @@ const headers =
 
 const row = (item) => {
     let stateStyle = "";
-    switch (item.key) {
+    switch (item.stateKey) {
         case "New":
             stateStyle = "bg-blue-400 text-white";
             break;
         case "Closed":
+        case "WaitingForUserResponse":
             stateStyle = "bg-green-400";
-        default:
-            stateStyle = "";
+            break;
+        case "WaitingForBusinessResponse":
+            stateStyle = "bg-yellow-400"
+            break;
+        case "UnderInvestigation":
+            stateStyle = "bg-red-600 text-white";
+            break;
     }
     return <>
         <td>{item.id}</td>
