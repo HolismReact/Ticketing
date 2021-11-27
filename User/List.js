@@ -98,7 +98,7 @@ const row = (item) => {
                 title={item.relatedItems.TimeAgo + ' ago'}
             />
         </td>
-        <td>{item.stateKey}</td>
+        <td>{item.relatedItems.titleizedStateKey}</td>
     </>
 }
 
