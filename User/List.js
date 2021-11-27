@@ -5,8 +5,9 @@ import {
     Ascending,
     ListAction,
     ItemAction,
-    post,
     ValueWithTitle,
+    Chip,
+    post,
     app
 } from '@List';
 import DoneIcon from '@material-ui/icons/Done';
@@ -81,16 +82,24 @@ const itemActions = (item) => {
 const headers =
     <>
         <th>#</th>
-        <th> User </th>
         <th>Title</th>
         <th>Creation date</th>
         <th>State</th>
     </>
 
 const row = (item) => {
+    let stateStyle = "";
+    switch (item.key) {
+        case "New":
+            stateStyle = "bg-blue-400 text-white";
+            break;
+        case "Closed":
+            stateStyle = "bg-green-400";
+        default:
+            stateStyle = "";
+    }
     return <>
         <td>{item.id}</td>
-        <td>{item.user}</td>
         <td>{item.title}</td>
         <td>
             <ValueWithTitle
@@ -98,7 +107,12 @@ const row = (item) => {
                 title={item.relatedItems.TimeAgo + ' ago'}
             />
         </td>
-        <td>{item.relatedItems.titleizedStateKey}</td>
+        <td>
+            <Chip
+                text={item.relatedItems.titleizedStateKey}
+                className={stateStyle}
+            />
+        </td>
     </>
 }
 
