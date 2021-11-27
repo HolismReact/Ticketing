@@ -9,7 +9,7 @@ const fields =
         />
         <Enum
             column='priorityId'
-            entity='priority'
+            entity='ticketingPriority'
             placeholder='Priority'
             required='Please choose the priority for this ticket. Choose less importance if it is less urgent.'
         />
