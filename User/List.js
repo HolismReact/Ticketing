@@ -98,7 +98,7 @@ const row = (item) => {
             stateStyle = "bg-green-400";
             break;
         case "WaitingForBusinessResponse":
-            stateStyle = "bg-yellow-400"
+            stateStyle = "bg-yellow-400 text-blue-900"
             break;
         case "UnderInvestigation":
             stateStyle = "bg-red-600 text-white";
