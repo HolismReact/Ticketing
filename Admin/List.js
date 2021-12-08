@@ -9,8 +9,8 @@ import {
     ValueWithTitle,
     app
 } from '@List';
-import DoneIcon from '@material-ui/icons/Done';
-import MessageIcon from '@material-ui/icons/Message';
+import DoneIcon from '@mui/icons-material/Done';
+import MessageIcon from '@mui/icons-material/Message';
 import CreateTicket from './Create';
 
 const filters =
