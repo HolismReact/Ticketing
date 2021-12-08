@@ -1,11 +1,11 @@
 import { PagePadding, get, post, app } from '@Panel';
 import { LongText } from '@Form';
 import React, { useState, useEffect } from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Collapse from '@material-ui/core/Collapse';
+import CircularProgress from '@mui/material/CircularProgress';
+import Collapse from '@mui/material/Collapse';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 
 const ViewTicket = () => {
 
