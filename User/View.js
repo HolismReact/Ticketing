@@ -44,7 +44,9 @@ const ViewTicket = () => {
     }
 
     useEffect(() => {
-        loadTicket();
+        if (ticketId) {
+            loadTicket();
+        }
         app.emit(app.componentLoaded, { pageTitle: 'View ticket ' });
     }, []);
 
