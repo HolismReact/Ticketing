@@ -5,8 +5,9 @@ import {
     Ascending,
     ListAction,
     ItemAction,
-    post,
     ValueWithTitle,
+    Chip,
+    post,
     app
 } from '@List';
 import DoneIcon from '@mui/icons-material/Done';
@@ -16,7 +17,7 @@ import CreateTicket from './Create';
 const filters =
     <>
         <Text column='title' placeholder='Title' />
-        <Enum column='stateId' placeholder='State' entity='state' />
+        <Enum column='stateId' placeholder='State' entity='ticketingState' />
     </>
 
 const sorts = [
@@ -99,6 +100,22 @@ const headers =
     </>
 
 const row = (item) => {
+    let stateStyle = "";
+    switch (item.stateKey) {
+        case "New":
+            stateStyle = "bg-blue-400 text-white";
+            break;
+        case "Closed":
+        case "WaitingForUserResponse":
+            stateStyle = "bg-green-400";
+            break;
+        case "WaitingForBusinessResponse":
+            stateStyle = "bg-yellow-400 text-blue-900"
+            break;
+        case "UnderInvestigation":
+            stateStyle = "bg-red-600 text-white";
+            break;
+    }
     return <>
         <td>{item.id}</td>
         <td>{item.user}</td>
@@ -109,7 +126,12 @@ const row = (item) => {
                 title={item.relatedItems.TimeAgo + ' ago'}
             />
         </td>
-        <td>{item.stateKey}</td>
+        <td>
+            <Chip
+                text={item.relatedItems.titleizedStateKey}
+                className={stateStyle}
+            />
+        </td>
     </>
 }
 

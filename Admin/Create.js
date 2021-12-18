@@ -1,7 +1,16 @@
-import { Form, Text, Enum, LongText } from '@Form';
+import { Form, Text, Enum, LongText, Browse } from '@Form';
+import UserBrowser from '../User/Browser'
 
 const fields =
     <>
+        <Browse
+            column='UserGuid'
+            placeholder='User'
+            required='Please select a user'
+            browser={UserBrowser}
+            display={user => user.displayName}
+            choose={user => user.guid}
+        />
         <Text
             column='title'
             placeholder='Title'
@@ -9,7 +18,7 @@ const fields =
         />
         <Enum
             column='priorityId'
-            entity='priority'
+            entity='ticketingPriority'
             placeholder='Priority'
             required='Please choose the priority for this ticket. Choose less importance if it is less urgent.'
         />
