@@ -91,6 +91,7 @@ const row = (item) => {
     let stateStyle = "";
     switch (item.stateKey) {
         case "New":
+        default:
             stateStyle = "bg-blue-400 text-white";
             break;
         case "Closed":
