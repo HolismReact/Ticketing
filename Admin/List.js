@@ -17,7 +17,7 @@ import CreateTicket from './Create';
 const filters =
     <>
         <Text column='title' placeholder='Title' />
-        <Enum column='stateId' placeholder='State' entity='ticketingState' />
+        <Enum column='stateId' placeholder='State' entityType='ticketingState' />
     </>
 
 const sorts = [
@@ -161,7 +161,7 @@ const Tickets = (props) => {
     return (
         <List
             title="Tickets"
-            entity="ticket"
+            entityType="ticket"
             filters={filters}
             sorts={sorts}
             listActions={listActions}

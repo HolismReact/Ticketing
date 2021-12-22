@@ -18,7 +18,7 @@ const fields =
         />
         <Enum
             column='priorityId'
-            entity='ticketingPriority'
+            entityType='ticketingPriority'
             placeholder='Priority'
             required='Please choose the priority for this ticket. Choose less importance if it is less urgent.'
         />
@@ -31,7 +31,7 @@ const fields =
 
 const CreateTicket = (props) => {
     return <Form
-        entity='ticket'
+        entityType='ticket'
         inputs={fields}
     />
 }
