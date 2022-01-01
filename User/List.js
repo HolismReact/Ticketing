@@ -110,7 +110,7 @@ const row = (item) => {
         <td>{item.title}</td>
         <td>
             <ValueWithTitle
-                value={new Date(item.date).toDateString()}
+                value={item && item.date ? new Date(item.date).toDateString() : 'N/A'}
                 title={item.relatedItems.TimeAgo + ' ago'}
             />
         </td>
