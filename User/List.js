@@ -109,8 +109,11 @@ const row = (item) => {
         <td>{item.title}</td>
         <td>
             <ValueWithTitle
-                value={new Date(item.utcDate).toDateString()}
-                title={item.relatedItems.TimeAgo + ' ago'}
+                value={<div>
+                    <div>{new Date(item.utcDate + 'Z').toDateString()}</div>
+                    <div>{new Date(item.utcDate + 'Z').toLocaleTimeString()}</div>
+                </div>}
+                title={item.relatedItems.timeAgo + ' ago'}
             />
         </td>
         <td>
@@ -122,24 +125,19 @@ const row = (item) => {
     </>
 }
 
-const Tickets = (props) => {
+const Tickets = () => {
 
-    return (
-        <List
-            title="Tickets"
-            //subtitle="We are here for you. Create a new ticket to get support."
-            //breadcrumbItems={breadcrumbItems}
-            entityType="ticket"
-            filters={filters}
-            sorts={sorts}
-            listActions={listActions}
-            headers={headers}
-            row={row}
-            //card={card}
-            create={CreateTicket}
-            itemActions={itemActions}
-        />
-    );
+    return <List
+        title="Tickets"
+        entityType="ticket"
+        filters={filters}
+        sorts={sorts}
+        listActions={listActions}
+        headers={headers}
+        row={row}
+        create={CreateTicket}
+        itemActions={itemActions}
+    />
 }
 
 export default Tickets;
