@@ -109,10 +109,16 @@ const row = (item) => {
         <td>{item.id}</td>
         <td>{item.title}</td>
         <td>
-            <ValueWithTitle
-                value={item && item.date ? new Date(item.date).toDateString() : 'N/A'}
-                title={item.relatedItems.TimeAgo + ' ago'}
-            />
+            {
+                item && item.date
+                    ?
+                    <ValueWithTitle
+                        value={new Date(item.date).toDateString()}
+                        title={item.relatedItems.TimeAgo + ' ago'}
+                    />
+                    :
+                    'N/A'
+            }
         </td>
         <td>
             <Chip
