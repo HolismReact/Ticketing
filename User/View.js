@@ -1,5 +1,4 @@
 import { PagePadding, get, post, app } from '@Panel';
-import { LongText } from '@Form';
 import React, { useState, useEffect } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Collapse from '@mui/material/Collapse';

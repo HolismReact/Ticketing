@@ -2,7 +2,6 @@ import {
     List,
     Text,
     Enum,
-    Ascending,
     ListAction,
     ItemAction,
     ValueWithTitle,
@@ -109,16 +108,10 @@ const row = (item) => {
         <td>{item.id}</td>
         <td>{item.title}</td>
         <td>
-            {
-                item && item.date
-                    ?
-                    <ValueWithTitle
-                        value={new Date(item.date).toDateString()}
-                        title={item.relatedItems.TimeAgo + ' ago'}
-                    />
-                    :
-                    'N/A'
-            }
+            <ValueWithTitle
+                value={new Date(item.utcDate).toDateString()}
+                title={item.relatedItems.TimeAgo + ' ago'}
+            />
         </td>
         <td>
             <Chip
@@ -128,27 +121,6 @@ const row = (item) => {
         </td>
     </>
 }
-
-const card = (item) => {
-    return <div className="ticket bg-orange-200 m-2">
-        <div>{item.title}</div>
-    </div>
-}
-
-const breadcrumbItems = [
-    {
-        title: 'Home',
-        url: '/'
-    },
-    {
-        title: 'Tickets',
-        url: '/tickets',
-    },
-    {
-        title: 'List',
-        url: '/tickets'
-    }
-]
 
 const Tickets = (props) => {
 
