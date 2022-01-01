@@ -6,6 +6,8 @@ import {
     ItemAction,
     ValueWithTitle,
     Chip,
+    DatePart,
+    TimePart,
     post,
     app
 } from '@List';
@@ -109,10 +111,11 @@ const row = (item) => {
         <td>{item.title}</td>
         <td>
             <ValueWithTitle
-                value={<div>
-                    <div>{new Date(item.utcDate + 'Z').toDateString()}</div>
-                    <div>{new Date(item.utcDate + 'Z').toLocaleTimeString()}</div>
-                </div>}
+                value={<>
+                    <DatePart value={item.utcDate} />
+                    <br />
+                    <TimePart value={item.utcDate} />
+                </>}
                 title={item.relatedItems.timeAgo + ' ago'}
             />
         </td>
