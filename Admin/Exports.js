@@ -9,7 +9,7 @@ const TicketingRoutes = [
     },
     {
         "path": "/ticket",
-        "component": PostContent
+        "component": ViewTicket
     }
 ]
 
@@ -17,7 +17,7 @@ const TicketingMenu = [
     {
         "title": "Tickets",
         "icon": SupportIcon,
-        "url": "/posts",
+        "url": "/tickets",
     }
 ]
 
