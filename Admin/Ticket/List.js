@@ -170,7 +170,8 @@ const Tickets = (props) => {
             create={CreateTicket}
             itemActions={itemActions}
         />
-    );
+    )
 }
 
-export default Tickets;
+export default Tickets
+export { Tickets }
