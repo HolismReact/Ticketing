@@ -1,5 +1,5 @@
 import { Form, Text, Enum, LongText, Browse } from '@Form';
-import UserBrowser from '../../Accounts/Browser'
+import UserBrowser from '../../Accounts/User/Browser'
 
 const fields =
     <>
